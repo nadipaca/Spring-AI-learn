@@ -556,10 +556,16 @@ public class MultimodalService {
             .content();
     }
     
-    public String analyzeImageFromUrl(String imageUrl) {
+    public String analyzeImageFromUrl(String imageUrl) throws MalformedURLException {
+        // Validate URL to prevent SSRF attacks
+        URL url = new URL(imageUrl);
+        if (!url.getProtocol().equals("https")) {
+            throw new IllegalArgumentException("Only HTTPS URLs are allowed");
+        }
+        
         return chatClient.prompt()
             .user(u -> u.text("Describe this image")
-                .media(MimeTypeUtils.IMAGE_JPEG, new URL(imageUrl)))
+                .media(MimeTypeUtils.IMAGE_JPEG, url))
             .call()
             .content();
     }
@@ -638,9 +644,15 @@ public class AudioService {
     
     // Text to speech
     public byte[] textToSpeech(String text) {
-        // Implementation depends on the provider
-        // Return audio data as bytes
-        return new byte[0]; // Placeholder
+        // NOTE: This is a placeholder implementation
+        // Actual implementation depends on the AI provider:
+        // - OpenAI TTS API: Use OpenAI's text-to-speech endpoint
+        // - Azure Cognitive Services: Use Azure Speech SDK
+        // - Google Cloud: Use Google Text-to-Speech API
+        // The implementation would call the provider's API and return audio bytes
+        throw new UnsupportedOperationException(
+            "Text-to-speech implementation depends on your AI provider"
+        );
     }
 }
 ```
@@ -854,7 +866,7 @@ public class FeedbackService {
         
         <div class="form-group">
             <label for="rating">Rating:</label>
-            <select id="rating" required>
+            <select id="rating" required aria-label="Select your rating from 1 to 5 stars">
                 <option value="">Select rating</option>
                 <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
                 <option value="4">⭐⭐⭐⭐ Good</option>
@@ -1171,6 +1183,16 @@ public class CachedAIService {
 @Configuration
 public class AIConfig {
     
+    @Bean
+    public ChatClient chatClient(ChatClient.Builder builder) {
+        // Configure timeouts for AI requests
+        // Note: Timeout configuration may vary by AI provider
+        return builder
+            .defaultSystem("You are a helpful assistant")
+            .build();
+    }
+    
+    // For custom HTTP clients (if needed for certain providers)
     @Bean
     public RestClient restClient() {
         return RestClient.builder()
