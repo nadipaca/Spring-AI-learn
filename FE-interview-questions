@@ -1,0 +1,51 @@
+➤ 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱
+1. How JS engines optimize code (JIT, hidden classes).
+2. Prototype chain vs class inheritance.
+3. Event delegation at scale.
+4. AbortController and request cancellation.
+5. WeakMap vs Map, real use cases.
+6. How garbage collection works in V8.
+7. Cross-tab communication (BroadcastChannel, storage events).
+8. Writing a custom Promise implementation (conceptually).
+
+➤ 𝗥𝗲𝗮𝗰𝘁 𝗜𝗻𝘁𝗲𝗿𝗻𝗮𝗹𝘀 & 𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲
+9. How React Fiber changed rendering.
+10. Concurrent rendering, when it helps vs hurts.
+11. Batching & scheduling updates.
+12. Controlled re-render boundaries.
+13. Server Components vs Client Components.
+14. Hydration and hydration mismatches.
+15. Suspense beyond lazy loading.
+16. Building a custom hook library design.
+
+➤ 𝗣𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 𝗗𝗲𝗲𝗽 𝗗𝗶𝘃𝗲
+17. CPU vs memory bottlenecks in frontend apps.
+18. Profiling with React DevTools & browser Performance tab.
+19. Avoiding layout thrashing.
+20. Virtualization vs windowing tradeoffs.
+21. Preload vs prefetch vs priority hints.
+22. Bundle analysis & tree shaking failures.
+23. Edge caching vs CDN caching strategies.
+
+➤ 𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 𝗔𝗿𝗰𝗵𝗶𝘁𝗲𝗰𝘁𝘂𝗿𝗲
+24. Monolith vs micro-frontend tradeoffs.
+25. State management in large teams.
+26. Design system governance.
+27. Handling breaking API changes safely.
+28. Frontend observability stack.
+29. Versioning UI contracts.
+30. Multi-tenant frontend apps.
+31. Security layers in frontend (XSS, CSP, CSRF).
+
+➤ 𝗨𝗫 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴
+32. Skeleton vs spinner, when to use which.
+33. Optimistic UI architecture.
+34. Accessibility beyond aria labels.
+35. Perceived performance psychology.
+36. Gesture handling in mobile web.
+
+➤ 𝗧𝗲𝘀𝘁𝗶𝗻𝗴 & 𝗥𝗲𝗹𝗶𝗮𝗯𝗶𝗹𝗶𝘁𝘆
+37. Flaky test detection strategies.
+38. Contract testing between FE & BE.
+39. Visual regression testing.
+40. Chaos engineering for frontend.
